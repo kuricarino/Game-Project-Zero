@@ -3,10 +3,12 @@ button {
 }
 
 .blank-computer-screen {
-    background-color: #D4DBDC;
-    border: solid 70px #4D5151;
+    background: rgb(122,122,122);
+    background: linear-gradient(0deg, rgba(122,122,122,0.9724264705882353) 0%, rgba(189,188,188,1) 100%);
+    border: solid 70px rgba(77, 81, 81);
     height: 550px;
     border-radius: 30px;
+
 }
 
 /* may not need?
@@ -17,11 +19,23 @@ button {
 
 h1 {
     font-family: 'Roboto Mono', monospace;
+    margin-left: 10px;
 }
 
 ol {
     font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
     column-count: 2;
     list-style-type: upper-alpha;
     list-style-position: inside;
+    margin-left: 30px;
+    margin-right: 30px;
 }
+
+li {
+    margin: 0 0 30px 0;
+}
+
+li:hover {
+    background-color: rgb(249, 249, 11, 0.5);
+  }

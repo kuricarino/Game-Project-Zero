@@ -4,13 +4,15 @@ function startGame() {
 
 // ***** THINGS TO CONSIDER ***** //
 // divide questions and answers into objects?
+// download bar
+// typewriter effect?
 
 // ***** THINGS TO DO ***** //
 
 // questions and answers object
 const triviaQA = [
 
-    questionOne= {
+    questionOne = {
         question: "What is the name of Tom Cruise’s character in the Mission Impossible film series?",
         answersArray: [
             "Ethan Hawke",
@@ -21,7 +23,7 @@ const triviaQA = [
         correctAnswer: "Ethan Hunt",
     },
 
-    questionTwo= {
+    questionTwo = {
         question: "What opera was featured in the 2015 Mission Impossible film?",
         answersArray: [
             "Madame Butterfly",
@@ -32,7 +34,7 @@ const triviaQA = [
         correctAnswer: "Turandot",
     },
 
-    questionThree= {
+    questionThree = {
         question: "Does Ethan’s wife die in the series?",
         answersArray: [
             "True",
@@ -41,7 +43,7 @@ const triviaQA = [
         correctAnswer: "False"
     },
 
-    questionFour= {
+    questionFour = {
         question: "The character William Brandt, played by Jeremy Renner, also stars in all of the films below except for:",
         answersArray: [
             "The Bourne Legacy",
@@ -52,7 +54,7 @@ const triviaQA = [
         correctAnswer: "The Knockout",
     },
 
-    questionFive= {
+    questionFive = {
         question: "Fill in the blank. Mission Impossible: Ghost __________.",
         answersArray: 
         [
@@ -62,7 +64,12 @@ const triviaQA = [
             "Protocol"
         ],
         correctAnswer: "Protocol"
-    }
+    },
+
+    userAnswers = [
+        //empty array
+    ],
+
 ];
 
 // password QA
@@ -77,25 +84,12 @@ const passwordObject = {
 
 // ***** FUNCTIONS ***** //
 
-let securityQuestions = //array
-[   // question 1
-    "What is the name of Tom Cruise’s character in the Mission Impossible film series?",
-    // question 2
-    "What opera was featured in the 2015 Mission Impossible film?",
-    // question 3
-    "Does Ethan’s wife die in the series?",
-    // question 4
-    "The character William Brandt, played by Jeremy Renner, also stars in all of the films below except for:",
-    // question 5 
-    "Fill in the blank. Mission Impossible: Ghost __________."
-]
-
-// on F1 CLICK
+// on F1 - F5 CLICK
 
 let displayedQuestion = 0;
+let userEnteredAnswer;
 
-
-function displayQuestion(event) {
+function question(event) {
     if (event.target.innerHTML === "F1") {
         displayedQuestion = 0;
     } else if (event.target.innerHTML === "F2") {
@@ -107,22 +101,21 @@ function displayQuestion(event) {
     } else if (event.target.innerHTML === "F5") {
         displayedQuestion = 4;
     }
-    console.log("HERE")
+
     let question;
         let check = document.querySelector("h1");
 
         if (check == null) {
             question = document.createElement("h1");
-            console.log(triviaQA[0])
             question.innerHTML = triviaQA[displayedQuestion].question;
             //questionOne.setAttribute("class", "question");
-            document.getElementById("questions").appendChild(question);
+            document.getElementById("question-answers").appendChild(question);
         } else {
             check.remove();
             question = document.createElement("h1");
             question.innerHTML = triviaQA[displayedQuestion].question;
             //questionOne.setAttribute("class", "question");
-            document.getElementById("questions").appendChild(question);
+            document.getElementById("question-answers").appendChild(question);
         }
 
         let answers;
@@ -131,41 +124,86 @@ function displayQuestion(event) {
             for (let i = 0; i < triviaQA[displayedQuestion].answersArray.length; i++) {
             let answersList = document.createElement("li");
                 answersList.innerHTML = triviaQA[displayedQuestion].answersArray[i];
-                answers.setAttribute("class", "answer");
-                answers.appendChild(answersList);
+                answersList.setAttribute("id", "answer");
+                answers.appendChild(answersList);   
             }
         
         question.appendChild(answers);
         
 };
 
-//
 
-// function displayAnswersOne() {
-//     let answersOne;
-//         answersOne = document.createElement("ul");
-    
-//     for (let i = 0; i < triviaQA.questionOne.answersArray.length; i++) {
-//     let answersOneList = document.createElement("li");
-//         answersOneList.innerHTML = triviaQA.questionOne.answersArray;
-//         answersOne.appendChild(answersOneList);
-//     }
-// };
+// add event listener for F1 - F5 buttons
+document.querySelectorAll(".question").forEach(function(button) {
+    button.addEventListener("click", question)
+});
 
+// add event listener for user click on answer list
+// https://dev.to/akhil_001/adding-event-listeners-to-the-future-dom-elements-using-event-bubbling-3cp1
 
-/* this in to setQuestions ////questions.setAttribute("class", "hidden");
-let numQuestion = 0;
-function displayQuestion() {
-    questions = document.querySelectorAll("h1");
-    questions[numQuestion].classList.remove("hidden");
-    numQuestion++
+let targetElement;
+
+function addCustomEventListener (selector, event, handler) {
+let rootElement = document.querySelector("#question-answers");
+    rootElement.addEventListener(event, function(evt){
+        targetElement = evt.target
+        //let selector = 'li';
+        while (targetElement != null) {
+            if (targetElement.matches(selector)) {
+                handler(evt);
+                console.log(targetElement);
+                // STOPPED HERE LAST NIGHT
+                // CAN LOG TARGETELEMENT TO CONSOLE. 
+                // BUT WHAT NEXT? IF CONSOLE LOG BELOW, NOTHING IS PRINTED
+                return;
+            }
+            targetElement = targetElement.parentElement;
+        }
+    }, true
+    );
 }
+
+addCustomEventListener('li#answer', 'click', taskClickHandler);
+console.log(targetElement);
+
+
+function taskClickHandler () {
+    // let userSelection = targetElement;
+    // userAnswers.push(userSelection);
+}
+
+// store answers in array of objects?
+/*
+function userAnswer() {
+    triviaQA.userAnswers.push(userEnteredAnswer);
+    console.log(userAnswers)
+};
 */
 
-// for loop to write one question
+// in object create one for wrong answers
+    // check if it equals 3 
+    // gif of fire
 
-// put that function inside of another function that loops 5 times?
+// function to add on click listeners to all ordered lists
+// event listener
 
-document.querySelectorAll(".question").forEach(function(button) {
-    button.addEventListener("click",displayQuestion)
+//falling asleep. worked on late
+/*
+let clickedAnswer = 0;
+
+let answers = document.createElement("ol");
+    for (let i = 0; i < triviaQA[clickedAnswer].length; i++) {
+        console.log(triviaQA[clickedAnswer]);
+
+    }
+
+let answersList = document.createElement("li")
+console.log(answersList);
+
+console.log(document.querySelectorAll(".answer"));
+document.getElementById("answer").addEventListener("click", function() {
+    usersAnswers.push(userEnteredAnswer);
+    console.log(userAnswers);
 });
+*/
+

@@ -12,18 +12,19 @@ function startGame() {
 // questions and answers object
 const triviaQA = [
 
-    questionOne = {
+    {
         question: "What is the name of Tom Cruise’s character in the Mission Impossible film series?",
         answersArray: [
             "Ethan Hawke",
             "James Hunt",
             "Ethan Hunt",
             "Ethan Allen"
-            ],
+        ],
+        attemptedAnswer: false,
         correctAnswer: "Ethan Hunt",
     },
 
-    questionTwo = {
+    {
         question: "What opera was featured in the 2015 Mission Impossible film?",
         answersArray: [
             "Madame Butterfly",
@@ -31,19 +32,21 @@ const triviaQA = [
             "Porgy & Bess",
             "Carmen"
         ],
+        attemptedAnswer: false,
         correctAnswer: "Turandot",
     },
 
-    questionThree = {
+    {
         question: "Does Ethan’s wife die in the series?",
         answersArray: [
             "True",
             "False"
         ],
+        attemptedAnswer: false,
         correctAnswer: "False"
     },
 
-    questionFour = {
+    {
         question: "The character William Brandt, played by Jeremy Renner, also stars in all of the films below except for:",
         answersArray: [
             "The Bourne Legacy",
@@ -51,10 +54,11 @@ const triviaQA = [
             "S.W.A.T.",
             "The Hurt Locker",
         ],
+        attemptedAnswer: false,
         correctAnswer: "The Knockout",
     },
 
-    questionFive = {
+    {
         question: "Fill in the blank. Mission Impossible: Ghost __________.",
         answersArray: 
         [
@@ -63,6 +67,7 @@ const triviaQA = [
             "Renegade",
             "Protocol"
         ],
+        attemptedAnswer: false,
         correctAnswer: "Protocol"
     },
 
@@ -70,6 +75,7 @@ const triviaQA = [
         //empty array
     ],
 
+    userScore = 0,
 ];
 
 // password QA
@@ -87,7 +93,6 @@ const passwordObject = {
 // on F1 - F5 CLICK
 
 let displayedQuestion = 0;
-let userEnteredAnswer;
 
 function question(event) {
     if (event.target.innerHTML === "F1") {
@@ -124,7 +129,7 @@ function question(event) {
             for (let i = 0; i < triviaQA[displayedQuestion].answersArray.length; i++) {
             let answersList = document.createElement("li");
                 answersList.innerHTML = triviaQA[displayedQuestion].answersArray[i];
-                answersList.setAttribute("id", "answer");
+                answersList.setAttribute("class", "answer");
                 answers.appendChild(answersList);   
             }
         
@@ -138,9 +143,8 @@ document.querySelectorAll(".question").forEach(function(button) {
     button.addEventListener("click", question)
 });
 
-// add event listener for user click on answer list
-// https://dev.to/akhil_001/adding-event-listeners-to-the-future-dom-elements-using-event-bubbling-3cp1
 
+// add event listener for user click on answer list
 let targetElement;
 
 function addCustomEventListener (selector, event, handler) {
@@ -151,59 +155,53 @@ let rootElement = document.querySelector("#question-answers");
         while (targetElement != null) {
             if (targetElement.matches(selector)) {
                 handler(evt);
-                console.log(targetElement);
-                // STOPPED HERE LAST NIGHT
-                // CAN LOG TARGETELEMENT TO CONSOLE. 
-                // BUT WHAT NEXT? IF CONSOLE LOG BELOW, NOTHING IS PRINTED
+                userAnswers.push(targetElement.innerText);
                 return;
             }
             targetElement = targetElement.parentElement;
         }
     }, true
     );
+
 }
 
-addCustomEventListener('li#answer', 'click', taskClickHandler);
-console.log(targetElement);
+addCustomEventListener('li.answer', 'click', taskClickHandler);
 
 
-function taskClickHandler () {
-    // let userSelection = targetElement;
-    // userAnswers.push(userSelection);
-}
+// function that checks correct answers
 
-// store answers in array of objects?
-/*
-function userAnswer() {
-    triviaQA.userAnswers.push(userEnteredAnswer);
-    console.log(userAnswers)
+function taskClickHandler() {
+    if (targetElement.innerText = "Ethan Hunt") {
+        userScore += 1;
+        console.log(userScore);
+    } else {
+        console.log(`wrong answer`);
+    }
 };
-*/
+
+// }
+// if (userAnswers.includes('Ethan Hunt')) {
+//     userScore += 1;
+//     console.log(userScore);
+// }
+// function that checks correct answers
+// function userAnswersCheck () {
+//     if (userAnswers.includes("Ethan Hunt")) {
+//         console.log(`true`);
+//     }
+//     // } else if (event.target.innerHTML === "F2") {
+//     //     displayedQuestion = 1;
+//     // } else if (event.target.innerHTML === "F3") {
+//     //     displayedQuestion = 2;
+//     // } else if (event.target.innerHTML === "F4") {
+//     //     displayedQuestion = 3;
+//     // } else if (event.target.innerHTML === "F5") {
+//     //     displayedQuestion = 4;
+//    // }
+// };
 
 // in object create one for wrong answers
     // check if it equals 3 
     // gif of fire
 
-// function to add on click listeners to all ordered lists
-// event listener
-
-//falling asleep. worked on late
-/*
-let clickedAnswer = 0;
-
-let answers = document.createElement("ol");
-    for (let i = 0; i < triviaQA[clickedAnswer].length; i++) {
-        console.log(triviaQA[clickedAnswer]);
-
-    }
-
-let answersList = document.createElement("li")
-console.log(answersList);
-
-console.log(document.querySelectorAll(".answer"));
-document.getElementById("answer").addEventListener("click", function() {
-    usersAnswers.push(userEnteredAnswer);
-    console.log(userAnswers);
-});
-*/
-
+//userAnswersCheck();

@@ -1,0 +1,27 @@
+button {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.blank-computer-screen {
+    background-color: #D4DBDC;
+    border: solid 70px #4D5151;
+    height: 550px;
+    border-radius: 30px;
+}
+
+/* may not need?
+.hidden {
+ display: none;
+}
+*/
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+ol {
+    font-family: 'Roboto Mono', monospace;
+    column-count: 2;
+    list-style-type: upper-alpha;
+    list-style-position: inside;
+}

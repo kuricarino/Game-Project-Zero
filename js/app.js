@@ -76,6 +76,8 @@ const triviaQA = [
     userScore = 0,
 
     maxWrong = 0,
+
+    //gameInstructions = "Answer the questions to download more files. If you get three wrong, download stops and the mission fails. Get 4 or more correct and you move on to the password page. Input the correct password to get all the files and complete your mission. Good luck."
 ];
 
 // password QA
@@ -100,6 +102,13 @@ document.getElementById("start-button").addEventListener("click", video);
 function video() {
     let removeVideo = document.getElementById('video-div');
         removeVideo.remove();
+    
+    let gameInstructions = document.createElement("p");
+        gameInstructions.innerHTML = `Answer the questions to download more files. 
+        Get 3 WRON, the download stops and the mission has failed. 
+        Get 4 OR MORE correct and you move on to the password page. 
+        Input the correct password to get all the files and complete your mission. Good luck.`;
+        document.getElementById("start").appendChild(gameInstructions);
 }
 
 // on F1 - F5 CLICK, corresponding question displayed
@@ -124,14 +133,12 @@ function question(event) {
         if (check == null) {
             question = document.createElement("h1");
             question.innerHTML = triviaQA[displayedQuestion].question;
-            //questionOne.setAttribute("class", "question");
-            document.getElementById("blank-computer-screen").appendChild(question);
+            document.getElementById("qa").appendChild(question);
         } else {
             check.remove();
             question = document.createElement("h1");
             question.innerHTML = triviaQA[displayedQuestion].question;
-            //questionOne.setAttribute("class", "question");
-            document.getElementById("blank-computer-screen").appendChild(question);
+            document.getElementById("qa").appendChild(question);
         }
 
         let answers;
@@ -166,7 +173,23 @@ function clickAnswer (event) {
     } else {
         console.log(maxWrong += 1);
             if (maxWrong === 3) {
-        console.log(`computer self-destruct`);
+        console.log(`user exceeded max wrong`);
+
+        // removes other elements from 'screen'
+        document.getElementById('download').remove();
+        document.getElementById('qa').remove();
+
+        // adds try again gif
+        let threeWrong = document.createElement("img");
+            threeWrong.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
+            threeWrong.setAttribute("id", "img");
+            document.getElementById("three-wrong-div").appendChild(threeWrong);
+        
+        // anchor tag that lets user redirect (may need to change href?)
+        let threeWrongAnchor = document.createElement("a");
+            threeWrongAnchor.innerHTML = "you failed. try again?";
+            threeWrongAnchor.setAttribute("href", "file:///Users/kuri.carino/sei/projects/Game-Project-Zero/index.html")
+            document.getElementById("three-wrong-div").appendChild(threeWrongAnchor);
     }
 }
 questionsComplete();
@@ -183,9 +206,6 @@ questionsComplete();
 // 3 wrong, 2 right = mission failed! above function works!
 
 function questionsComplete() {
-    //let h1check = document.createElement("h1");
-    //if (h1check.innerHTML === triviaQA[4].question && (userScore >= 3)) {
-        //above code needs to be worked on for game logic (also clickAnswer function)
         if (((userScore >= 4) && (maxWrong >= 1)) || ((userScore >=3) && (maxWrong >= 2)) || (userScore === 5)) {
             console.log(`'files ready to download' buttons populates. user moves to password state`);
 
@@ -257,7 +277,7 @@ function clickPassword(event) {
             passwordInput.setAttribute("minlength", "5");
             passwordInput.setAttribute("maxlength", "5");
             passwordInput.setAttribute("id", "password-input");
-            passwordInput.innerHTML = "5 LETTER WORD";
+            //passwordInput.innerHTML = "5 LETTER WORD"; doesn't work
             //need? passwordInput.setAttribute("spellcheck", "true") 
             document.getElementById('password-state').appendChild(passwordInput);
 
@@ -282,7 +302,7 @@ function checkPasswordInput() {
 
                 document.getElementById("password-state").remove();
 
-            console.log(`MISSION COMPLETE!`);
+            console.log(`---MISSION COMPLETE!---`);
 
             let missionCompleteMessage = document.createElement("h1");
                 missionCompleteMessage.innerHTML = "MISSION COMPLETE"
@@ -297,7 +317,7 @@ function checkPasswordInput() {
 
             document.getElementById("password-state").remove();
 
-            console.log(`mission failed`);
+            console.log(`---mission failed---`);
 
             let missionFailedMessage = document.createElement("h1");
                 missionFailedMessage.innerHTML = "MISSION FAILED"
@@ -305,24 +325,13 @@ function checkPasswordInput() {
 
 
             let missionFailed = document.createElement("img");
-                missionFailed.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
+                missionFailed.setAttribute("src", "https://media1.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
                 missionFailed.setAttribute("id", "img")
                 document.getElementById("mission-state").appendChild(missionFailed);
 
         }
 };
 
-/* missin failed gif
-let missionFailedMessage = document.createElement("h1");
-                missionFailedMessage.innerHTML = "MISSION FAILED"
-                document.getElementById("mission-state").appendChild(missionFailedMessage);
-
-
-            let missionFailed = document.createElement("img");
-                missionFailed.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
-                missionFailed.setAttribute("id", "img")
-                document.getElementById("mission-state").appendChild(missionFailed);
-*/
 
 // ******* WHERE TO PLACE THESE FUNCTIONS? ******* //
 

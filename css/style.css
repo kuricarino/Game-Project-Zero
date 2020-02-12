@@ -1,6 +1,19 @@
-button {
+#start {
     font-family: 'Roboto Mono', monospace;
+    position: absolute;
+    left: 50%;
 }
+
+.question {
+    font-family: 'Roboto Mono', monospace;
+    flex-direction: row;
+    flex-grow: 1;
+}
+/* FLEX BOX FOR BUTTONS DOESN'T WORK
+.flex-item {
+    flex-grow: 2;
+}
+*/
 
 #blank-computer-screen {
     background: rgb(122,122,122);
@@ -43,4 +56,11 @@ li:hover {
 .password {
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
+}
+
+#download {
+    background: #EF1A1A;
+    position: absolute;
+    bottom: 170px; 
+    left: 100px;
 }

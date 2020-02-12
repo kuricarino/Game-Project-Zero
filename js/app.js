@@ -140,13 +140,18 @@ function question(event) {
         
         question.appendChild(answers);
         document.querySelector('ol').addEventListener('click', clickAnswer);
-        
+
+        let downloadBar = document.createElement("div");
+            downloadBar.innerHTML = "Downloading...";
+            downloadBar.setAttribute("id", "download");
+            answers.appendChild(downloadBar);
 };
 
-// add event listener for F1 - F5 buttons
+// adds event listener for F1 - F5 buttons
 document.querySelectorAll(".question").forEach(function(button) {
-    button.addEventListener("click", question)
+    button.addEventListener("click", question);
 });
+
 
 // click event targets li and checks innerText against triviaQA array's correctAnswer at displayedQuestion
 // can console log score, mission complete and mission failed.
@@ -177,25 +182,16 @@ function clickAnswer (event) {
         //             document.getElementById("password").addEventListener('click', clickPassword);
         // }
 }
-missionComplete();
+questionsComplete();
 };
 
 
-
-function missionComplete() {
+function questionsComplete() {
     //let h1check = document.createElement("h1");
     //if (h1check.innerHTML === triviaQA[4].question && (userScore >= 3)) {
         //above code needs to be worked on for game logic (also clickAnswer function)
         if (userScore === 5) {
         console.log(`mission complete`);
-
-        // pWdiv and passwordButton propogates if userScore = 5
-        // addEventListener
-
-        //don't need separate div?
-        // let pWdiv = document.createElement("div");
-        //     pWdiv.setAttribute("class", "password-div");
-        //     document.getElementById("question-answers").appendChild(pWdiv);
 
         let passwordButton = document.createElement("button");
             passwordButton.setAttribute("id", "password");
@@ -211,7 +207,11 @@ function missionComplete() {
 function clickPassword(event) {
     if (event.target.innerHTML === "FILES READY TO DOWNLOAD") {
 
-        //remove button
+        //remove download
+        let removeDownload = document.getElementById('download');
+            removeDownload.remove();
+
+        //remove button (may not need if can disable f1-f5 buttons)
         let removeFilesDownloadButton = document.getElementById('password');
             removeFilesDownloadButton.remove();
         
@@ -220,9 +220,9 @@ function clickPassword(event) {
 
         if (check == null) {
             passwordClue = document.createElement("h1");
-            passwordClue.innerHTML = `${password.passwordInstructions} 
-            ${password.passwordClues} 
-            ${password.passwordQuestion}`;
+            passwordClue.innerHTML = `${password.passwordInstructions}< br /> 
+            < br />${password.passwordClues}< br /> 
+            < br />${password.passwordQuestion}`;
             passwordClue.setAttribute("class", "password");
             document.getElementById("question-answers").appendChild(question);
         } else {
@@ -241,28 +241,22 @@ function clickPassword(event) {
             passwordInput.setAttribute("maxlength", "5");
             passwordInput.setAttribute("id", "password-input");
             passwordInput.innerHTML = "5 LETTER WORD";
-            //passwordInput.setAttribute("spellcheck", "true") 
-            document.getElementById("question-answers").appendChild(passwordInput);
+            //need? passwordInput.setAttribute("spellcheck", "true") 
+            document.getElementById('question-answers').appendChild(passwordInput);
 
         let passwordInputButton = document.createElement("button");
+            passwordInputButton.setAttribute("id", "pass-input-button");
             passwordInputButton.innerHTML = "Enter"
-            document.getElementById("question-answers").appendChild(passwordInputButton);
+            document.getElementById('question-answers').appendChild(passwordInputButton);
 
-            document.getElementById("question-answers").addEventListener('click', checkPasswordInput);
-
-            //get passwordInput to check if matches "knife"
-        // if (passwordInput.innerHTML === 'knife' || "KNIFE" || "Knife") {
-        //     console.log(passwordInput.innerHTML);
-
-        // }   
+            document.getElementById('question-answers').addEventListener('click', checkPasswordInput);
     }
 };
 
 
-console.log(password.passwordAnswer);
 function checkPasswordInput() { 
-    let passwordAnswerCheck = document.getElementById("password-input").value; 
-        if (password.passwordAnswer === passwordAnswerCheck) {
+    let passwordAnswerCheck = document.getElementById('password-input').value; 
+        if (password.passwordAnswer === passwordAnswerCheck.toLowerCase()) {
             console.log(`woo`);
         } else {
             console.log(`whyyyyyyyy`);
@@ -270,6 +264,24 @@ function checkPasswordInput() {
 };
 
 
+// ***** WHERE TO PLACE THESE FUNCTIONS? ***** //
+
+//disable button on click - where to place it
+function disableButtonsOnceClicked() {
+    document.getElementById("f1").disabled = true;
+    document.getElementById("f2").disabled = true;
+    document.getElementById("f3").disabled = true;
+    document.getElementById("f4").disabled = true;
+    document.getElementById("f5").disabled = true;
+}
+
+// wrote function but don't know where to put it
+function removePasswordInput() {
+    let removeInputField = document.getElementById('password-input');
+        removeInputField.remove();
+    let removeInputButton = document.getElementById('pass-input-button');
+        removeInputButton.remove();
+}
 
 
 // // creates new div, propogates passwordInput, passwordButton and passwordInstruct and Clues

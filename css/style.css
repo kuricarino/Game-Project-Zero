@@ -1,7 +1,10 @@
-#start {
-    font-family: 'Roboto Mono', monospace;
-    position: absolute;
-    left: 50%;
+#start { 
+    display: flex; 
+    justify-content: center; 
+}
+
+#video-div {
+    text-align: center;
 }
 
 .question {
@@ -35,6 +38,11 @@ h1 {
     margin-left: 10px;
 }
 
+h3 {
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 10px;
+}
+
 ol {
     font-family: 'Roboto Mono', monospace;
     font-size: 25px;
@@ -63,4 +71,10 @@ li:hover {
     position: absolute;
     bottom: 170px; 
     left: 100px;
+}
+
+#mission-state { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
 }

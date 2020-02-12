@@ -1,12 +1,8 @@
 //*************************** HACK THE MAINFRAME *************************** //
 
-function startGame() {
-    console.log(`start game`);
-};
+console.log(`hack the mainframe`);
 
 // ***** THINGS TO CONSIDER ***** //
-// divide questions and answers into objects?
-// download bar
 // typewriter effect?
 
 // ***** THINGS TO DO ***** //
@@ -61,7 +57,9 @@ const triviaQA = [
     },
 
     {
-        question: "Fill in the blank. Mission Impossible: Ghost __________.",
+        question: `Fill in the blank. 
+        Mission Impossible: Ghost __________.`,
+
         answersArray: 
         [
             "Recon",
@@ -76,27 +74,35 @@ const triviaQA = [
     // userAnswers = [] rendered useless by function clickAnswer below
 
     userScore = 0,
+
     maxWrong = 0,
-    //maxScore = 5,
 ];
 
 // password QA
 const password = {
 
-    passwordInstructions: [`Use ONLY 5 LETTERS from the correct answers to answer the following question.`],
+    passwordInstructions: [`Answer the following question, using only 5 letters from the words below.`],
 
     passwordQuestion: [
         `In the scene shown at the beginning of the game, Ethan leaves behind something on the computer desk. 
         What did he leave?`
     ],
 
-    passwordClues: [`Ethan Hunt, TuraNdot, False, The KIng's Speech, Protocol`],
+    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, THE kiNG'S SPEECH, PROTOCOL`],
 
     passwordAnswer: "knife"
 
 };
 
-// on F1 - F5 CLICK
+// addEventListener to start button and removes video
+document.getElementById("start-button").addEventListener("click", video);
+
+function video() {
+    let removeVideo = document.getElementById('video-div');
+        removeVideo.remove();
+}
+
+// on F1 - F5 CLICK, corresponding question displayed
 let displayedQuestion = 0; // used displayedQuestion in clickAnswer function
 
 function question(event) {
@@ -119,13 +125,13 @@ function question(event) {
             question = document.createElement("h1");
             question.innerHTML = triviaQA[displayedQuestion].question;
             //questionOne.setAttribute("class", "question");
-            document.getElementById("question-answers").appendChild(question);
+            document.getElementById("blank-computer-screen").appendChild(question);
         } else {
             check.remove();
             question = document.createElement("h1");
             question.innerHTML = triviaQA[displayedQuestion].question;
             //questionOne.setAttribute("class", "question");
-            document.getElementById("question-answers").appendChild(question);
+            document.getElementById("blank-computer-screen").appendChild(question);
         }
 
         let answers;
@@ -152,7 +158,6 @@ document.querySelectorAll(".question").forEach(function(button) {
     button.addEventListener("click", question);
 });
 
-
 // click event targets li and checks innerText against triviaQA array's correctAnswer at displayedQuestion
 // can console log score, mission complete and mission failed.
 function clickAnswer (event) {
@@ -161,31 +166,13 @@ function clickAnswer (event) {
     } else {
         console.log(maxWrong += 1);
             if (maxWrong === 3) {
-        console.log(`mission failed`);
+        console.log(`computer self-destruct`);
     }
-        // if (userScore >= 3) {
-        //     console.log(`mission complete`);
-
-        //         // pWdiv and passwordButton propogates if userScore = 5
-        //         // addEventListener
-
-        //         //don't need separate div?
-        //         // let pWdiv = document.createElement("div");
-        //         //     pWdiv.setAttribute("class", "password-div");
-        //         //     document.getElementById("question-answers").appendChild(pWdiv);
-
-        //         let passwordButton = document.createElement("button");
-        //             passwordButton.setAttribute("id", "password");
-        //             passwordButton.innerHTML = "FILES READY TO DOWNLOAD";
-        //             document.getElementById("blank-computer-screen").appendChild(passwordButton);
-                
-        //             document.getElementById("password").addEventListener('click', clickPassword);
-        // }
 }
 questionsComplete();
 };
 
-
+// ANSWERS TEST
 // 4 right, 1 wrong = below function works!
 // 3 right, 2 wrong = below function works!
 // 2 right, 1 wrong, 2 right = below function works!
@@ -199,19 +186,18 @@ function questionsComplete() {
     //let h1check = document.createElement("h1");
     //if (h1check.innerHTML === triviaQA[4].question && (userScore >= 3)) {
         //above code needs to be worked on for game logic (also clickAnswer function)
-        if (((userScore >= 4) && (maxWrong >= 1)) || ((userScore >=3) && (maxWrong >= 2))) {
-            console.log(`mission complete`);
+        if (((userScore >= 4) && (maxWrong >= 1)) || ((userScore >=3) && (maxWrong >= 2)) || (userScore === 5)) {
+            console.log(`'files ready to download' buttons populates. user moves to password state`);
 
         let passwordButton = document.createElement("button");
             passwordButton.setAttribute("id", "password");
             passwordButton.innerHTML = "FILES READY TO DOWNLOAD";
-            document.getElementById("question-answers").appendChild(passwordButton);
+            document.getElementById("blank-computer-screen").appendChild(passwordButton);
         
             document.getElementById("password").addEventListener('click', clickPassword);
 }
 // }
 };
-
 
 // opens up password state
 function clickPassword(event) {
@@ -225,26 +211,47 @@ function clickPassword(event) {
         let removeFilesDownloadButton = document.getElementById('password');
             removeFilesDownloadButton.remove();
         
+        let passwordh1;
+        let passwordQuestion;
         let passwordClue;
         let check = document.querySelector("h1");
 
         if (check == null) {
-            passwordClue = document.createElement("h1");
-            passwordClue.innerHTML = `${password.passwordInstructions}< br /> 
-            < br />${password.passwordClues}< br /> 
-            < br />${password.passwordQuestion}`;
-            passwordClue.setAttribute("class", "password");
-            document.getElementById("question-answers").appendChild(question);
+            passwordh1 = document.createElement("h1");
+            passwordh1.setAttribute("id", "password");
+            passwordh1.innerHTML = `${password.passwordInstructions}`
+            document.getElementById("password-state").appendChild(passwordh1);
+
+            passwordQuestion = document.createElement("h1");
+            passwordQuestion.setAttribute("id", "password");
+            passwordQuestion.innerHTML = `${password.passwordQuestion}`;
+            document.getElementById("password-state").appendChild(passwordQuestion);
+
+            passwordClue = document.createElement("h3");
+            passwordClue.setAttribute("id", "password");
+            passwordClue.innerHTML =`${password.passwordClues}`
+            document.getElementById("password-state").appendChild(passwordClue);
+
         } else {
             check.remove();
-            passwordClue = document.createElement("h1");
-            passwordClue.innerHTML = `${password.passwordInstructions}
-            ${password.passwordClues}
-            ${password.passwordQuestion}`;
-            passwordClue.setAttribute("class", "password");
-            document.getElementById("question-answers").appendChild(passwordClue);
+
+            passwordh1 = document.createElement("h1");
+            passwordh1.setAttribute("id", "password");
+            passwordh1.innerHTML = `${password.passwordInstructions}`
+            document.getElementById("password-state").appendChild(passwordh1);
+
+            passwordQuestion = document.createElement("h1");
+            passwordQuestion.setAttribute("id", "password");
+            passwordQuestion.innerHTML = `${password.passwordQuestion}`;
+            document.getElementById("password-state").appendChild(passwordQuestion);
+
+            passwordClue = document.createElement("h3");
+            passwordClue.setAttribute("id", "password");
+            passwordClue.innerHTML =`${password.passwordClues}`
+            document.getElementById("password-state").appendChild(passwordClue);
         }
 
+        // password input box
         let passwordInput = document.createElement("input");
             passwordInput.setAttribute("type", "text");
             passwordInput.setAttribute("minlength", "5");
@@ -252,32 +259,76 @@ function clickPassword(event) {
             passwordInput.setAttribute("id", "password-input");
             passwordInput.innerHTML = "5 LETTER WORD";
             //need? passwordInput.setAttribute("spellcheck", "true") 
-            document.getElementById('question-answers').appendChild(passwordInput);
+            document.getElementById('password-state').appendChild(passwordInput);
 
+        // password ENTER button
         let passwordInputButton = document.createElement("button");
             passwordInputButton.setAttribute("id", "pass-input-button");
             passwordInputButton.innerHTML = "Enter"
-            document.getElementById('question-answers').appendChild(passwordInputButton);
-
-            document.getElementById('question-answers').addEventListener('click', checkPasswordInput);
+            document.getElementById('password-state').appendChild(passwordInputButton);
     }
+            document.getElementById("pass-input-button").addEventListener('click', checkPasswordInput);
 };
 
-
+// checks users input for password prompt
 function checkPasswordInput() { 
-    let passwordAnswerCheck = document.getElementById('password-input').value; 
+    let passwordAnswerCheck = document.getElementById('password-input').value;
+
+    let missionStatusDiv = document.createElement("div");
+        missionStatusDiv.setAttribute("id", "mission-state");
+        document.getElementById("blank-computer-screen").appendChild(missionStatusDiv);
+    
         if (password.passwordAnswer === passwordAnswerCheck.toLowerCase()) {
-            console.log(`woo`);
+
+                document.getElementById("password-state").remove();
+
+            console.log(`MISSION COMPLETE!`);
+
+            let missionCompleteMessage = document.createElement("h1");
+                missionCompleteMessage.innerHTML = "MISSION COMPLETE"
+                document.getElementById("mission-state").appendChild(missionCompleteMessage);
+
+            let missionComplete = document.createElement("img");
+                missionComplete.setAttribute("src", "https://filmschoolrejects.com/wp-content/uploads/2018/08/Mission-Impossible-Bombs.gif");
+                missionComplete.setAttribute("id", "img")
+                document.getElementById("mission-state").appendChild(missionComplete);
+
         } else {
-            console.log(`whyyyyyyyy`);
+
+            document.getElementById("password-state").remove();
+
+            console.log(`mission failed`);
+
+            let missionFailedMessage = document.createElement("h1");
+                missionFailedMessage.innerHTML = "MISSION FAILED"
+                document.getElementById("mission-state").appendChild(missionFailedMessage);
+
+
+            let missionFailed = document.createElement("img");
+                missionFailed.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
+                missionFailed.setAttribute("id", "img")
+                document.getElementById("mission-state").appendChild(missionFailed);
+
         }
 };
 
+/* missin failed gif
+let missionFailedMessage = document.createElement("h1");
+                missionFailedMessage.innerHTML = "MISSION FAILED"
+                document.getElementById("mission-state").appendChild(missionFailedMessage);
 
-// ***** WHERE TO PLACE THESE FUNCTIONS? ***** //
+
+            let missionFailed = document.createElement("img");
+                missionFailed.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
+                missionFailed.setAttribute("id", "img")
+                document.getElementById("mission-state").appendChild(missionFailed);
+*/
+
+// ******* WHERE TO PLACE THESE FUNCTIONS? ******* //
 
 //disable button on click - where to place it
 function disableButtonsOnceClicked() {
+    document.getElementById("f1").disabled = true;
     document.getElementById("f1").disabled = true;
     document.getElementById("f2").disabled = true;
     document.getElementById("f3").disabled = true;
@@ -292,30 +343,5 @@ function removePasswordInput() {
     let removeInputButton = document.getElementById('pass-input-button');
         removeInputButton.remove();
 }
-
-
-// // creates new div, propogates passwordInput, passwordButton and passwordInstruct and Clues
-// let pWdiv = document.createElement("div");
-// pWdiv.setAttribute("class", "password-div");
-// document.getElementById("blank-computer-screen").appendChild(pWdiv);
-
-// let passwordInstruct = document.createElement("h2");
-// passwordInstruct.innerHTML = `ENTER a 5 LETTER password. Use LETTERS from the correct answers and the clue below.` 
-// pWdiv.appendChild(passwordInstruct);
-
-// let passwordClue = document.createElement("h3");
-// passwordClue.innerHTML = `Ethan Hunt, TuraNdot, False, The KIng's Speech, Protocol`;
-// pWdiv.appendChild(passwordClue);
-
-// let passwordClueTwo = document.createElement("h3");
-// passwordClueTwo.innerHTML = `At the end of the clip, what did Ethan leave behind on the desk?`
-// pWdiv.appendChild(passwordClueTwo);
-
-// let passwordInput = document.createElement("input");
-// passwordInput.setAttribute("type", "text");
-// passwordInput.setAttribute("minlength", "5");
-// passwordInput.setAttribute("maxlength", "5");
-// //passwordInput.setAttribute("spellcheck", "true") 
-// pWdiv.appendChild(passwordInput);
 
 

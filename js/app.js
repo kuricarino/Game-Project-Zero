@@ -1,3 +1,5 @@
+//*************************** HACK THE MAINFRAME *************************** //
+
 function startGame() {
     console.log(`start game`);
 };
@@ -81,7 +83,7 @@ const triviaQA = [
 // password QA
 const password = {
 
-    passwordInstructions: [`Use ONLY 5 LETTERS from the correct answers and the following clue.`],
+    passwordInstructions: [`Use ONLY 5 LETTERS from the correct answers to answer the following question.`],
 
     passwordQuestion: [
         `In the scene shown at the beginning of the game, Ethan leaves behind something on the computer desk. 
@@ -90,7 +92,7 @@ const password = {
 
     passwordClues: [`Ethan Hunt, TuraNdot, False, The KIng's Speech, Protocol`],
 
-    passwordAnswer: ["knife"]
+    passwordAnswer: "knife"
 
 };
 
@@ -152,8 +154,8 @@ function clickAnswer (event) {
     if (event.target.innerText === triviaQA[displayedQuestion].correctAnswer) {
         console.log(userScore += 1);
     } else {
-        console.log(maxWrong += 1);
-            if (maxWrong === 3) {
+        console.log(userScore += 0);
+            if (userScore === maxWrong) {
         console.log(`mission failed`);
     }
         // if (userScore >= 3) {
@@ -181,8 +183,11 @@ missionComplete();
 
 
 function missionComplete() {
-if (userScore >= 5) {
-    console.log(`mission complete`);
+    //let h1check = document.createElement("h1");
+    //if (h1check.innerHTML === triviaQA[4].question && (userScore >= 3)) {
+        //above code needs to be worked on for game logic (also clickAnswer function)
+        if (userScore === 5) {
+        console.log(`mission complete`);
 
         // pWdiv and passwordButton propogates if userScore = 5
         // addEventListener
@@ -195,7 +200,7 @@ if (userScore >= 5) {
         let passwordButton = document.createElement("button");
             passwordButton.setAttribute("id", "password");
             passwordButton.innerHTML = "FILES READY TO DOWNLOAD";
-            document.getElementById("blank-computer-screen").appendChild(passwordButton);
+            document.getElementById("question-answers").appendChild(passwordButton);
         
             document.getElementById("password").addEventListener('click', clickPassword);
 }
@@ -215,40 +220,54 @@ function clickPassword(event) {
 
         if (check == null) {
             passwordClue = document.createElement("h1");
-            passwordClue.innerHTML = `${password.passwordInstructions} + 
-            ${password.passwordClues} + 
+            passwordClue.innerHTML = `${password.passwordInstructions} 
+            ${password.passwordClues} 
             ${password.passwordQuestion}`;
             passwordClue.setAttribute("class", "password");
-            document.getElementById("blank-computer-screen").appendChild(question);
+            document.getElementById("question-answers").appendChild(question);
         } else {
             check.remove();
             passwordClue = document.createElement("h1");
-            passwordClue.innerHTML = `${password.passwordInstructions} +
-            ${password.passwordClues} +
+            passwordClue.innerHTML = `${password.passwordInstructions}
+            ${password.passwordClues}
             ${password.passwordQuestion}`;
             passwordClue.setAttribute("class", "password");
-            document.getElementById("blank-computer-screen").appendChild(passwordClue);
+            document.getElementById("question-answers").appendChild(passwordClue);
         }
 
         let passwordInput = document.createElement("input");
             passwordInput.setAttribute("type", "text");
             passwordInput.setAttribute("minlength", "5");
             passwordInput.setAttribute("maxlength", "5");
+            passwordInput.setAttribute("id", "password-input");
             passwordInput.innerHTML = "5 LETTER WORD";
             //passwordInput.setAttribute("spellcheck", "true") 
-            document.getElementById("blank-computer-screen").appendChild(passwordInput);
+            document.getElementById("question-answers").appendChild(passwordInput);
 
         let passwordInputButton = document.createElement("button");
             passwordInputButton.innerHTML = "Enter"
-            document.getElementById("blank-computer-screen").appendChild(passwordInputButton);
+            document.getElementById("question-answers").appendChild(passwordInputButton);
 
-        if (passwordInput.innerHTML === 'knife' || "KNIFE" || "Knife") {
-            console.log(`correct`);
+            document.getElementById("question-answers").addEventListener('click', checkPasswordInput);
 
-        }   
+            //get passwordInput to check if matches "knife"
+        // if (passwordInput.innerHTML === 'knife' || "KNIFE" || "Knife") {
+        //     console.log(passwordInput.innerHTML);
+
+        // }   
     }
 };
 
+
+console.log(password.passwordAnswer);
+function checkPasswordInput() { 
+    let passwordAnswerCheck = document.getElementById("password-input").value; 
+        if (password.passwordAnswer === passwordAnswerCheck) {
+            console.log(`woo`);
+        } else {
+            console.log(`whyyyyyyyy`);
+        }
+};
 
 
 

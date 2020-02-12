@@ -159,8 +159,8 @@ function clickAnswer (event) {
     if (event.target.innerText === triviaQA[displayedQuestion].correctAnswer) {
         console.log(userScore += 1);
     } else {
-        console.log(userScore += 0);
-            if (userScore === maxWrong) {
+        console.log(maxWrong += 1);
+            if (maxWrong === 3) {
         console.log(`mission failed`);
     }
         // if (userScore >= 3) {
@@ -186,12 +186,21 @@ questionsComplete();
 };
 
 
+// 4 right, 1 wrong = below function works!
+// 3 right, 2 wrong = below function works!
+// 2 right, 1 wrong, 2 right = below function works!
+
+// 1 wrong, 4 right = below function works!
+// 1 wrong, 2 right, 2 wrong = mission failed! above function works!
+// 2 wrong, 3 right = below function works!
+// 3 wrong, 2 right = mission failed! above function works!
+
 function questionsComplete() {
     //let h1check = document.createElement("h1");
     //if (h1check.innerHTML === triviaQA[4].question && (userScore >= 3)) {
         //above code needs to be worked on for game logic (also clickAnswer function)
-        if (userScore === 5) {
-        console.log(`mission complete`);
+        if (((userScore >= 4) && (maxWrong >= 1)) || ((userScore >=3) && (maxWrong >= 2))) {
+            console.log(`mission complete`);
 
         let passwordButton = document.createElement("button");
             passwordButton.setAttribute("id", "password");
@@ -200,6 +209,7 @@ function questionsComplete() {
         
             document.getElementById("password").addEventListener('click', clickPassword);
 }
+// }
 };
 
 

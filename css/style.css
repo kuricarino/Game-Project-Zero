@@ -2,7 +2,7 @@ button {
     font-family: 'Roboto Mono', monospace;
 }
 
-.blank-computer-screen {
+#blank-computer-screen {
     background: rgb(122,122,122);
     background: linear-gradient(0deg, rgba(122,122,122,0.9724264705882353) 0%, rgba(189,188,188,1) 100%);
     border: solid 70px rgba(77, 81, 81);
@@ -38,4 +38,9 @@ li {
 
 li:hover {
     background-color: rgb(249, 249, 11, 0.5);
-  }
+}
+
+.password {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}

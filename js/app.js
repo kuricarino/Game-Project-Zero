@@ -159,7 +159,7 @@ function question(event) {
             downloadBar.innerHTML = "Downloading...";
             downloadBar.setAttribute("id", "download");
             downloadBar.setAttribute("class", "blinking");
-            document.getElementById("qa").appendChild(downloadBar);
+            answers.appendChild(downloadBar);
 };
 
 // adds event listener for F1 - F5 buttons

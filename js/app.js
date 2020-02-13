@@ -184,22 +184,35 @@ function clickAnswer (event) {
         // removes other elements from 'screen'
         document.getElementById('download').remove();
         document.getElementById('qa').remove();
+        document.getElementById('fButtons').remove();
 
-        // adds try again gif
+        // adds try again gif and text
         let threeWrong = document.createElement("img");
             threeWrong.setAttribute("src", "https://media0.giphy.com/media/MrCYIN3x0SgdG/giphy.gif");
             threeWrong.setAttribute("id", "img");
             document.getElementById("three-wrong-div").appendChild(threeWrong);
+
+        let threeWrongMessage = document.createElement("h1");
+            threeWrongMessage.innerHTML = "DOWNLOAD FAILED";
+            threeWrongMessage.setAttribute("class", "blinking");
+            document.getElementById("three-wrong-div").appendChild(threeWrongMessage);
         
-        // anchor tag that lets user redirect (may need to change href?)
+        // lets user redirect 
         let threeWrongAnchor = document.createElement("a");
-            threeWrongAnchor.innerHTML = "DOWNLOAD FAILED. try again?";
-            threeWrongAnchor.setAttribute("href", "file:///Users/kuri.carino/sei/projects/Game-Project-Zero/index.html")
+            threeWrongAnchor.innerHTML = "try again?";
             document.getElementById("three-wrong-div").appendChild(threeWrongAnchor);
+
+            threeWrongAnchor.addEventListener("click", function(){
+                    location.reload();
+            });
     }
 }
 questionsComplete();
 };
+
+// function reload() {
+//     location.reload();
+// }
 
 // ANSWERS TEST
 // 4 right, 1 wrong = below function works!

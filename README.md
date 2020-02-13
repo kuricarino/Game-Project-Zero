@@ -25,3 +25,12 @@ vii. Mission complete!
 
 event.target.style.background = "lightgrey";
 event.target.style.cursor = 'not-allowed';
+
+let threeWrongLink = document.createElement("a");
+            threeWrongLink.innerHTML = "try again?";
+            //threeWrongLink.setAttribute("id", "try-again");
+            document.getElementById("three-wrong-div").appendChild(threeWrongLink);
+            
+            // document.getElementById("try-again").addEventListener("click", function(){
+            //     location.reload();
+            // });

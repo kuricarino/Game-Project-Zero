@@ -102,6 +102,9 @@
     100%{   color: #000;    }
 }
 
+.fas fa-redo {
+    color: red;
+}
 
 /*===== TAGS =====*/
 body {

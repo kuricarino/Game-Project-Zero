@@ -50,6 +50,11 @@
     left: 100px;
 }
 
+#files-ready {
+    display: flex;
+    justify-content: center;
+}
+
 /*===== CLASSES =====*/
 .question {
     font-family: 'Roboto Mono', monospace;

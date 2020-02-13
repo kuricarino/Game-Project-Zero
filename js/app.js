@@ -214,7 +214,7 @@ function questionsComplete() {
         let passwordButton = document.createElement("button");
             passwordButton.setAttribute("id", "password");
             passwordButton.innerHTML = "FILES READY TO DOWNLOAD";
-            document.getElementById("blank-computer-screen").appendChild(passwordButton);
+            document.getElementById("files-ready").appendChild(passwordButton);
         
             document.getElementById("password").addEventListener('click', clickPassword);
 }

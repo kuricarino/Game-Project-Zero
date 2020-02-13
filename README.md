@@ -47,7 +47,7 @@ i. Add condition to if statement in clickAnswer function to try and eliminate 'c
 
 ii. Add click disable function on F buttons so user cannot answer the same question again
 
-iii. Add font awesome icon to 'download failed, try again' state.
+iii. Add font awesome icon to 'download failed, try again' state (Using font awesome on DOM created elements).
 
         let threeWrongLink = document.createElement("i");
             threeWrongLink.setAttribute("id", "try-again");

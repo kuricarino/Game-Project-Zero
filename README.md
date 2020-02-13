@@ -1,39 +1,64 @@
 # Game-Project-Zero
 
-Wireframe: https://imgur.com/a/CU2p57B
+# Wireframe
+See image of written wireframe: https://imgur.com/a/CU2p57B
 
-User Story
+# User Story
 i. 
     The game opens with the famous scene from Mission Impossible
+
         a. https://youtu.be/ar0xLps7WSY
         b. See screenshot: assets/start.png
+
 ii. 
-    Your mission, should you choose to accept it, is to hack the computer and download the information. Answer all five questions correct, use your answers to break the password. Miss three, the computer will self destruct and the mission has failed. 
-    a.User clicks on the start button to enter the game
+    User clicks on "Your mission, should you choose to accept it" button to display game instructions.
+
+    "Answer the questions to download more files. Get 3 WRONG, the download stops and the mission has failed. Get 4 OR MORE correct and use letters from the answers to break the password. Get all the files and complete your mission. Good luck."
+
+        a. User clicks on the F1 button to enter the game and display the first question
+        b. See screenshot: assets/game-play.png
+
 iii. 
-    User clicks on text boxes to answer five questions regarding film trivia
+    User clicks on F buttons to navigate through questions and answers. There are five questions total.
+
 iv. 
-    Each correct answer allows the user to “download” more information from the computer
-        a. Three wrong answers and the computer “self destructs”
+    Each correct answer allows the user to “download” more information from the computer.
+        a. At least four of the five questions must be answered correctly in order for the user to move onto the password page though the 'Files Ready To Download' button.
+            i. See screenshot: assets/files-ready.png
+        b. Three wrong answers, the download stops and the mission has failed.
+            i. See screenshot: assets/three-failed-attemps.png
 v. 
-    The words from the answers will be used to answer the password. User takes letters and forms a word that they will enter as the “password”
-vi. Password correct → Download complete. 
-vii. Mission complete!
+    The words from the answers will be used to answer the password. The user is given a question and hint. The user must use the letters to form a word that they will enter as the “password”.
+        a. See screenshot: assets/password-state.png
+vi. Win/Loss states
+        a. Password correct → Mission complete! 
+            i. See screenshot: assets/mission-accomplished-state.png
+        b. Password incorrect → Mission failed.
+            i. See screenshot: assets/mission-failed.png
 
 
+# Nice to haves
 
-(event.target.innerText === triviaQA[displayedQuestion].correctAnswer && event.target.elementName === "li")
+i. Add condition to if statement in clickAnswer function to try and eliminate 'click' on ol margin
+    a. Two clicks on ordered list can affect user score
 
-event.target.style.background = "lightgrey";
-event.target.style.cursor = 'not-allowed';
+        (event.target.innerText === triviaQA[displayedQuestion].correctAnswer && event.target.elementName === "li")
 
-let threeWrongLink = document.createElement("a");
-            threeWrongLink.innerHTML = "try again?";
-            //threeWrongLink.setAttribute("id", "try-again");
+ii. Add click disable function on F buttons so user cannot answer the same question again
+
+iii. Add font awesome icon to 'download failed, try again' state.
+
+        let threeWrongLink = document.createElement("i");
+            threeWrongLink.setAttribute("id", "try-again");
             document.getElementById("three-wrong-div").appendChild(threeWrongLink);
             
-            // document.getElementById("try-again").addEventListener("click", function(){
-            //     location.reload();
-            // });
+            document.getElementById("try-again").addEventListener("click", function(){
+            location.reload();
+            });
 
-assets/filename
+        CSS or HTML: <i class="fas fa-redo"></i>
+
+iv. Account for mobile version
+
+v. Build out trivia questions to a larger database
+

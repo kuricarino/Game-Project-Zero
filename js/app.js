@@ -106,8 +106,8 @@ function video() {
     let gameInstructions = document.createElement("p");
         gameInstructions.innerHTML = "Answer the questions to download more files."
         + "<br />" + "Get 3 WRONG, the download stops and the mission has failed." 
-        + "<br />" + "Get 4 OR MORE correct and you move on to the password page." 
-        + "<br />" + "Input the correct password to get all the files and complete your mission." 
+        + "<br />" + "Get 4 OR MORE correct and use letters from the answers to break the password." 
+        + "<br />" + "Get all the files and complete your mission." 
         + "<br />" + "Good luck.";
         document.getElementById("start").appendChild(gameInstructions);
 }

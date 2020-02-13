@@ -43,17 +43,18 @@
     justify-content: center; 
 }
 
+#download {
+    font-family: 'Roboto Mono', monospace;
+    background: #EF1A1A;
+    bottom: 170px; 
+    left: 100px;
+}
+
 /*===== CLASSES =====*/
 .question {
     font-family: 'Roboto Mono', monospace;
     flex-direction: row;
     flex-grow: 1;
-}
-
-.download {
-    background: #EF1A1A;
-    bottom: 170px; 
-    left: 100px;
 }
 
 .password {
@@ -64,7 +65,7 @@
 .blinking{
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
-    background: #EF1A1A;
+    background: #F47E7E;
     animation:blinkingText 1.2s infinite;
 }
 @keyframes blinkingText{

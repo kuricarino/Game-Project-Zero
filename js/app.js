@@ -158,6 +158,7 @@ function question(event) {
         let downloadBar = document.createElement("div");
             downloadBar.innerHTML = "Downloading...";
             downloadBar.setAttribute("id", "download");
+            downloadBar.setAttribute("class", "blinking");
             document.getElementById("qa").appendChild(downloadBar);
 };
 

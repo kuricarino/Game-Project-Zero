@@ -1,6 +1,6 @@
 //*************************** HACK THE MAINFRAME *************************** //
 
-console.log(`hack the mainframe`);
+console.log(`close call`);
 
 // ***** THINGS TO CONSIDER ***** //
 // typewriter effect?
@@ -83,7 +83,7 @@ const triviaQA = [
 // password QA
 const password = {
 
-    passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words below.`],
+    passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words in the hint below.`],
 
     passwordQuestion: [
         `In the scene shown at the beginning of the game, Ethan leaves behind something on the computer desk. 
@@ -189,7 +189,7 @@ function clickAnswer (event) {
         
         // anchor tag that lets user redirect (may need to change href?)
         let threeWrongAnchor = document.createElement("a");
-            threeWrongAnchor.innerHTML = "you failed. try again?";
+            threeWrongAnchor.innerHTML = "DOWNLOAD FAILED. try again?";
             threeWrongAnchor.setAttribute("href", "file:///Users/kuri.carino/sei/projects/Game-Project-Zero/index.html")
             document.getElementById("three-wrong-div").appendChild(threeWrongAnchor);
     }
@@ -308,7 +308,7 @@ function checkPasswordInput() {
             console.log(`---MISSION COMPLETE!---`);
 
             let missionCompleteMessage = document.createElement("h1");
-                missionCompleteMessage.innerHTML = "MISSION COMPLETE";
+                missionCompleteMessage.innerHTML = "WELL DONE";
                 document.getElementById("mission-state").appendChild(missionCompleteMessage);
 
             let missionComplete = document.createElement("img");

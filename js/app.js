@@ -108,7 +108,7 @@ function video() {
         + "<br />" + "Get 3 WRONG, the download stops and the mission has failed." 
         + "<br />" + "Get 4 OR MORE correct and you move on to the password page." 
         + "<br />" + "Input the correct password to get all the files and complete your mission." 
-        + "<br />" + "Good luck.";
+        + "<br />" + "Good luck!";
         document.getElementById("start").appendChild(gameInstructions);
 }
 

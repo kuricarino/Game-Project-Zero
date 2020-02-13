@@ -10,12 +10,6 @@
     text-align: center;
 }
 
-#fButtons {
-    display: flex; 
-    flex-direction: row;
-    justify-content: center; 
-}
-
 #blank-computer-screen {
     background: rgb(176,192,198);
     background: linear-gradient(0deg, rgba(176,192,198,0.9724264705882353) 0%, rgba(194,225,227,1) 100%);
@@ -45,13 +39,17 @@
 
 #download {
     font-family: 'Roboto Mono', monospace;
-    background: #EA5757;
-    bottom: 170px; 
-    left: 100px;
+    background: rgb(234,87,87);
+    background: linear-gradient(90deg, rgba(234,87,87,1) 0%, rgba(234,87,87,1) 35%, rgba(226,239,240,1) 100%);
+    /*background: #EA5757;*/
+    border: dotted 2px black;
+    bottom: 120px;
+    left: 40px;
 }
 
 #files-ready {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -110,7 +108,6 @@
 body {
     background-color: #202020;
 }
-*/
 
 button {
     font-family: 'Roboto Mono', monospace;

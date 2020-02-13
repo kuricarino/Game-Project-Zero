@@ -104,10 +104,11 @@ function video() {
         removeVideo.remove();
     
     let gameInstructions = document.createElement("p");
-        gameInstructions.innerHTML = `Answer the questions to download more files. 
-        Get 3 WRON, the download stops and the mission has failed. 
-        Get 4 OR MORE correct and you move on to the password page. 
-        Input the correct password to get all the files and complete your mission. Good luck.`;
+        gameInstructions.innerHTML = "Answer the questions to download more files."
+        + "<br />" + "Get 3 WRONG, the download stops and the mission has failed." 
+        + "<br />" + "Get 4 OR MORE correct and you move on to the password page." 
+        + "<br />" + "Input the correct password to get all the files and complete your mission." 
+        + "<br />" + "Good luck.";
         document.getElementById("start").appendChild(gameInstructions);
 }
 

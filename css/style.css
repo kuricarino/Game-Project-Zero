@@ -1,3 +1,5 @@
+/*===== ids =====*/
+
 #start { 
     display: flex; 
     flex-direction: column;
@@ -15,22 +17,93 @@
 }
 
 #blank-computer-screen {
-    background: rgb(122,122,122);
-    background: linear-gradient(0deg, rgba(122,122,122,0.9724264705882353) 0%, rgba(189,188,188,1) 100%);
+    background: rgb(176,192,198);
+    background: linear-gradient(0deg, rgba(176,192,198,0.9724264705882353) 0%, rgba(194,225,227,1) 100%);
     border: solid 70px rgba(77, 81, 81);
     height: 550px;
     border-radius: 30px;
-
 }
 
+#three-wrong-div {
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+}
+
+#qa { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+}
+
+#fButtons {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+}
+
+/*===== CLASSES =====*/
 .question {
     font-family: 'Roboto Mono', monospace;
     flex-direction: row;
     flex-grow: 1;
 }
-/* FLEX BOX FOR BUTTONS DOESN'T WORK
-.flex-item {
-    flex-grow: 2;
+
+.download {
+    background: #EF1A1A;
+    bottom: 170px; 
+    left: 100px;
+}
+
+.password {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}
+
+.blinking{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    background: #EF1A1A;
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+/* wanted to add to more elements, but couldn't get it to work line by line */
+
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 0% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+
+/*===== TAGS =====*/
+body {
+    background-color: #F3FDFF;
 }
 */
 
@@ -72,31 +145,6 @@ li:hover {
 
 p {
     font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
+    font-size: 17px;
     text-align: center;
-}
-
-.password {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 20px;
-}
-
-#three-wrong-div {
-    text-align: center;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; 
-}
-
-#download {
-    background: #EF1A1A;
-    position: absolute;
-    bottom: 170px; 
-    left: 100px;
-}
-
-#mission-state { 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; 
 }

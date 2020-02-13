@@ -160,3 +160,9 @@ p {
     padding: 1%;
     margin: 1% auto;
 }
+
+footer {
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(156, 148, 152, 0.5);
+    font-size: 10px;
+}

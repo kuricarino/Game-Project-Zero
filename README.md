@@ -6,6 +6,7 @@ User Story
 i. 
     The game opens with the famous scene from Mission Impossible
         a. https://youtu.be/ar0xLps7WSY
+        b. See screenshot: assets/start.png
 ii. 
     Your mission, should you choose to accept it, is to hack the computer and download the information. Answer all five questions correct, use your answers to break the password. Miss three, the computer will self destruct and the mission has failed. 
     a.User clicks on the start button to enter the game
@@ -34,3 +35,5 @@ let threeWrongLink = document.createElement("a");
             // document.getElementById("try-again").addEventListener("click", function(){
             //     location.reload();
             // });
+
+assets/filename

@@ -83,7 +83,7 @@ const triviaQA = [
 // password QA
 const password = {
 
-    passwordInstructions: [`Answer the following question, using only 5 letters from the words below.`],
+    passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words below.`],
 
     passwordQuestion: [
         `In the scene shown at the beginning of the game, Ethan leaves behind something on the computer desk. 

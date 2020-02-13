@@ -13,10 +13,11 @@
 #blank-computer-screen {
     background: rgb(176,192,198);
     background: linear-gradient(0deg, rgba(176,192,198,0.9724264705882353) 0%, rgba(194,225,227,1) 100%);
-    border: solid 70px rgba(77, 81, 81);
+    border: solid 50px rgba(77, 81, 81);
     height: 550px;
+    width: 850px;
     border-radius: 30px;
-
+    margin: 0 auto;
 }
 
 #three-wrong-div {
@@ -59,14 +60,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: auto;
 }
-
+/*
 #img {
     margin: 0 auto;
     width: 500px;
     height: auto;
 }
-
+*/
 #img2 {
     margin: 0 auto;
     width: 500px;
@@ -107,31 +109,6 @@
     99%{    color:transparent;  }
     100%{   color: #000;    }
 }
-
-/* wanted to add to more elements, but couldn't get it to work line by line */
-
-.typewriter {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 0% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
 
 
 /*===== TAGS =====*/

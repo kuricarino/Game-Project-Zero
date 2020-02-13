@@ -108,7 +108,7 @@ function video() {
         + "<br />" + "Get 3 WRONG, the download stops and the mission has failed." 
         + "<br />" + "Get 4 OR MORE correct and you move on to the password page." 
         + "<br />" + "Input the correct password to get all the files and complete your mission." 
-        + "<br />" + "Good luck!";
+        + "<br />" + "Good luck.";
         document.getElementById("start").appendChild(gameInstructions);
 }
 
@@ -307,23 +307,27 @@ function checkPasswordInput() {
 
             console.log(`---MISSION COMPLETE!---`);
 
-            let missionCompleteMessage = document.createElement("h1");
-                missionCompleteMessage.innerHTML = "WELL DONE";
-                document.getElementById("mission-state").appendChild(missionCompleteMessage);
-
             let missionComplete = document.createElement("img");
                 missionComplete.setAttribute("src", "https://filmschoolrejects.com/wp-content/uploads/2018/08/Mission-Impossible-Bombs.gif");
                 missionComplete.setAttribute("id", "img");
                 document.getElementById("mission-state").appendChild(missionComplete);
+
+            let missionCompleteMessage = document.createElement("h1");
+                missionCompleteMessage.innerHTML = "WELL DONE";
+                missionCompleteMessage.setAttribute("class", "blinking");
+                missionCompleteMessage.setAttribute("style", "font-size: 50px");
+                document.getElementById("mission-state").appendChild(missionCompleteMessage);
                 
         } else {
 
-            document.getElementById("password-state").remove();
+                document.getElementById("password-state").remove();
 
             console.log(`---mission failed---`);
 
             let missionFailedMessage = document.createElement("h1");
                 missionFailedMessage.innerHTML = "MISSION FAILED";
+                missionFailedMessage.setAttribute("class", "blinking");
+                missionFailedMessage.setAttribute("style", "font-size: 50px");
                 document.getElementById("mission-state").appendChild(missionFailedMessage);
 
 
@@ -333,10 +337,13 @@ function checkPasswordInput() {
                 document.getElementById("mission-state").appendChild(missionFailed);
 
         }
+
+                document.getElementById("fButtons").remove();
 };
 
 
-// ******* WHERE TO PLACE THESE FUNCTIONS? ******* //
+
+// **************  WHERE TO PLACE THESE FUNCTIONS? ************** //
 
 //disable button on click - where to place it
 function disableButtonsOnceClicked() {

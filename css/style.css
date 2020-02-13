@@ -16,6 +16,7 @@
     border: solid 70px rgba(77, 81, 81);
     height: 550px;
     border-radius: 30px;
+
 }
 
 #three-wrong-div {
@@ -48,6 +49,13 @@
 }
 
 #files-ready {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mission-state {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;

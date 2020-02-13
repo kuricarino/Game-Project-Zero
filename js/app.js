@@ -86,7 +86,7 @@ const password = {
     passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words in the hint below.`],
 
     passwordQuestion: [
-        `In the scene shown at the beginning of the game, Ethan leaves behind something on the computer desk. 
+        `At end of the famous scene 'Close Call', Ethan leaves behind something on the computer desk. 
         What did he leave?`
     ],
 

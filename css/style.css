@@ -44,10 +44,7 @@
     font-family: 'Roboto Mono', monospace;
     background: rgb(234,87,87);
     background: linear-gradient(90deg, rgba(234,87,87,1) 0%, rgba(234,87,87,1) 35%, rgba(226,239,240,1) 100%);
-    /*background: #EA5757;*/
     border: dotted 2px black;
-    bottom: 120px;
-    left: 40px;
 }
 
 #files-ready {
@@ -63,13 +60,7 @@
     justify-content: center;
     flex-basis: auto;
 }
-/*
-#img {
-    margin: 0 auto;
-    width: 500px;
-    height: auto;
-}
-*/
+
 #img2 {
     margin: 0 auto;
     width: 500px;
@@ -120,7 +111,8 @@ body {
 button {
     font-family: 'Inconsolata', monospace;
     font-size: 30px;
-    padding: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 a {

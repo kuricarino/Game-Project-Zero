@@ -279,6 +279,7 @@ function clickPassword(event) {
             passwordInput.setAttribute("minlength", "5");
             passwordInput.setAttribute("maxlength", "5");
             passwordInput.setAttribute("id", "password-input");
+            passwordInput.setAttribute("style", "font-size: 25px");
             //passwordInput.innerHTML = "5 LETTER WORD"; doesn't work
             //need? passwordInput.setAttribute("spellcheck", "true") 
             document.getElementById('password-state').appendChild(passwordInput);
@@ -307,12 +308,12 @@ function checkPasswordInput() {
             console.log(`---MISSION COMPLETE!---`);
 
             let missionCompleteMessage = document.createElement("h1");
-                missionCompleteMessage.innerHTML = "MISSION COMPLETE"
+                missionCompleteMessage.innerHTML = "MISSION COMPLETE";
                 document.getElementById("mission-state").appendChild(missionCompleteMessage);
 
             let missionComplete = document.createElement("img");
                 missionComplete.setAttribute("src", "https://filmschoolrejects.com/wp-content/uploads/2018/08/Mission-Impossible-Bombs.gif");
-                missionComplete.setAttribute("id", "img")
+                missionComplete.setAttribute("id", "img");
                 document.getElementById("mission-state").appendChild(missionComplete);
                 
         } else {
@@ -322,13 +323,13 @@ function checkPasswordInput() {
             console.log(`---mission failed---`);
 
             let missionFailedMessage = document.createElement("h1");
-                missionFailedMessage.innerHTML = "MISSION FAILED"
+                missionFailedMessage.innerHTML = "MISSION FAILED";
                 document.getElementById("mission-state").appendChild(missionFailedMessage);
 
 
             let missionFailed = document.createElement("img");
                 missionFailed.setAttribute("src", "https://media1.giphy.com/media/26BRx71hqRexBe7Wo/source.gif");
-                missionFailed.setAttribute("id", "img2")
+                missionFailed.setAttribute("id", "img2");
                 document.getElementById("mission-state").appendChild(missionFailed);
 
         }

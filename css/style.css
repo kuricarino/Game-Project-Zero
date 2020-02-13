@@ -79,6 +79,10 @@
     justify-content: center;
 }
 
+#password-input {
+    padding: 20px;
+}
+
 /*===== CLASSES =====*/
 .question {
     font-family: 'Inconsolata', monospace;

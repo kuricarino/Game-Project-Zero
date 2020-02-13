@@ -86,7 +86,7 @@ const password = {
     passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words in the hint below.`],
 
     passwordQuestion: [
-        `At end of the famous scene 'Close Call', Ethan and his crew behind something on the computer desk. 
+        `At end of the famous scene shown in the clip at the beginning of the game, Ethan and his crew behind something on the computer desk. 
         What did they leave?`
     ],
 

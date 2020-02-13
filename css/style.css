@@ -61,6 +61,18 @@
     justify-content: center;
 }
 
+#img {
+    margin: 0 auto;
+    width: 500px;
+    height: auto;
+}
+
+#img2 {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+
 #password-state {
     display: flex;
     flex-direction: column;

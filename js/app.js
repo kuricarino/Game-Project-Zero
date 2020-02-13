@@ -314,7 +314,7 @@ function checkPasswordInput() {
                 missionComplete.setAttribute("src", "https://filmschoolrejects.com/wp-content/uploads/2018/08/Mission-Impossible-Bombs.gif");
                 missionComplete.setAttribute("id", "img")
                 document.getElementById("mission-state").appendChild(missionComplete);
-
+                
         } else {
 
             document.getElementById("password-state").remove();
@@ -327,8 +327,8 @@ function checkPasswordInput() {
 
 
             let missionFailed = document.createElement("img");
-                missionFailed.setAttribute("src", "https://media1.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-                missionFailed.setAttribute("id", "img")
+                missionFailed.setAttribute("src", "https://media1.giphy.com/media/26BRx71hqRexBe7Wo/source.gif");
+                missionFailed.setAttribute("id", "img2")
                 document.getElementById("mission-state").appendChild(missionFailed);
 
         }

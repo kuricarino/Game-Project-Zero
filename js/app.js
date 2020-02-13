@@ -158,7 +158,7 @@ function question(event) {
         let downloadBar = document.createElement("div");
             downloadBar.innerHTML = "Downloading...";
             downloadBar.setAttribute("id", "download");
-            answers.appendChild(downloadBar);
+            document.getElementById("qa").appendChild(downloadBar);
 };
 
 // adds event listener for F1 - F5 buttons

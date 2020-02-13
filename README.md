@@ -63,5 +63,9 @@ iv. Account for mobile version
 
 v. Build out trivia questions to a larger database
 
+vi. Noticed that html file color is more dynamic than 'deployed' version
+    See screenshots: assets/deployed-color.png
+                     assets/html-color.png
+
 :0)
 

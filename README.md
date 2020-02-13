@@ -1,4 +1,5 @@
-# Game-Project-Zero
+# Game-Project-Zero: CLOSE CALL
+Inspired by the original 1996 Mission: Impossible film, challenge your film knowledge with trivia about the series. 
 
 # Wireframe
 See image of written wireframe: https://imgur.com/a/CU2p57B

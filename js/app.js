@@ -160,6 +160,10 @@ function question(event) {
             downloadBar.setAttribute("id", "download");
             downloadBar.setAttribute("class", "blinking");
             answers.appendChild(downloadBar);
+
+        // grays out f1 - f5 buttons
+        event.target.style.background = "#575C5C";
+        event.target.style.cursor = 'help';
 };
 
 // adds event listener for F1 - F5 buttons

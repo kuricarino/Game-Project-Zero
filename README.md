@@ -18,3 +18,10 @@ v.
     The words from the answers will be used to answer the password. User takes letters and forms a word that they will enter as the “password”
 vi. Password correct → Download complete. 
 vii. Mission complete!
+
+
+
+(event.target.innerText === triviaQA[displayedQuestion].correctAnswer && event.target.elementName === "li")
+
+event.target.style.background = "lightgrey";
+event.target.style.cursor = 'not-allowed';

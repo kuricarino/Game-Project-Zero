@@ -86,8 +86,8 @@ const password = {
     passwordInstructions: [`Answer the following question, using ONLY 5 letters from the words in the hint below.`],
 
     passwordQuestion: [
-        `At end of the famous scene 'Close Call', Ethan leaves behind something on the computer desk. 
-        What did he leave?`
+        `At end of the famous scene 'Close Call', Ethan and his crew behind something on the computer desk. 
+        What did they leave?`
     ],
 
     passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, THE kiNG'S SPEECH, PROTOCOL`],

@@ -47,7 +47,9 @@ i. Add condition to if statement in clickAnswer function to try and eliminate 'c
 
 ii. Add click disable function on F buttons so user cannot answer the same question again
 
-iii. Add font awesome icon to 'download failed, try again' state (Using font awesome on DOM created elements).
+iii. Tyepwriter effect (Could not get it to work line by line. Would print paragraph at the beginning as one "line")
+
+iv. Add font awesome icon to 'download failed, try again' state (Using font awesome on DOM created elements).
 
         let threeWrongLink = document.createElement("i");
             threeWrongLink.setAttribute("id", "try-again");
@@ -59,16 +61,18 @@ iii. Add font awesome icon to 'download failed, try again' state (Using font awe
 
         CSS or HTML: <i class="fas fa-redo"></i>
 
-iv. Account for mobile version
+v. Account for mobile version
 
-v. Build out trivia questions to a larger database
+vi. Build out trivia questions to a larger database
 
-vi. Noticed that html file color is more dynamic than 'deployed' version
+vii. Noticed that html file color is more dynamic than 'deployed' version
     See screenshots: assets/deployed-color.png
                      assets/html-color.png
 
-vii. Include scene that helps with password hint? ("Mission: Impossible (1996) - Out of the Vault Scene")
+viii. Include scene that helps with password hint? ("Mission: Impossible (1996) - Out of the Vault Scene")
     a. https://youtu.be/2wwC9c3iYK4?t=43
-    
+
 :0)
 
+# Known/possible bugs after website available to users
+    i. See screenshot in assets/bug.png

@@ -176,7 +176,9 @@ document.querySelectorAll(".question").forEach(function(button) {
 function clickAnswer (event) {
     if (event.target.innerText === triviaQA[displayedQuestion].correctAnswer) {
         console.log(userScore += 1);
+        event.target.style.background = "#f9f90b80";
     } else {
+        event.target.style.background = "#f9f90b80";
         console.log(maxWrong += 1);
             if (maxWrong === 3) {
         console.log(`user exceeded max wrong`);
@@ -356,6 +358,7 @@ function checkPasswordInput() {
         }
 
                 document.getElementById("fButtons").remove();
+                document.getElementById("password").remove();
 };
 
 

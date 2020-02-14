@@ -8,7 +8,7 @@ https://kuricarino.github.io/close-call/
 
 # Wireframe
 
-<img src="https://imgur.com/a/CU2p57B" width="400" length="300"><br>
+<img src="https://i.imgur.com/lKyf47e.jpg" width="400" length="300"><br>
 
 
 # User Story

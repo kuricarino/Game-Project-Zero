@@ -94,6 +94,3 @@ viii. Include scene that helps with password hint? ("Mission: Impossible (1996) 
 
 # After thoughts
     i. Would love to do a more streamlined game, something that looks less like a Powerpoint Presentation
-
-
-

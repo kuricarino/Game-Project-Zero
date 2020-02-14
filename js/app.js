@@ -47,7 +47,7 @@ const triviaQA = [
     {
         question: "The character William, played by Jeremy Renner, also stars in all of the films below except for:",
         answersArray: [
-            `The King's Speech`,
+            `Kill Bill`,
             "S.W.A.T.",
             "The Bourne Legacy",
             "The Hurt Locker",
@@ -90,7 +90,7 @@ const password = {
         What did they leave?`
     ],
 
-    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, THE kiNG'S SPEECH, PROTOCOL`],
+    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, kILL BiLL, PROTOCOL`],
 
     passwordAnswer: "knife"
 

@@ -69,5 +69,6 @@ vi. Noticed that html file color is more dynamic than 'deployed' version
 
 vii. Include scene that helps with password hint? ("Mission: Impossible (1996) - Out of the Vault Scene")
     a. https://youtu.be/2wwC9c3iYK4?t=43
+    
 :0)
 

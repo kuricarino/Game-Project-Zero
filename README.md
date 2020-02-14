@@ -1,8 +1,14 @@
 # Game-Project-Zero: CLOSE CALL
-Inspired by the original 1996 Mission: Impossible film, challenge your film knowledge with trivia about the series. 
+Inspired by the original 1996 Mission: Impossible film, challenge your film knowledge with trivia about the series! 
+
+
+# Play now
+https://kuricarino.github.io/close-call/
+
 
 # Wireframe
 See image of written wireframe: https://imgur.com/a/CU2p57B
+
 
 # User Story
 i. 
@@ -72,7 +78,14 @@ vii. Noticed that html file color is more dynamic than 'deployed' version
 viii. Include scene that helps with password hint? ("Mission: Impossible (1996) - Out of the Vault Scene")
     a. https://youtu.be/2wwC9c3iYK4?t=43
 
-:0)
 
 # Known/possible bugs after website available to users
     i. See screenshot in assets/bug.png
+        a. Bug identified and fixed (added document.getElementById("password").remove(); to checkPasswordInput function)
+
+
+# After thoughts
+    i. Would love to do a more streamlined game, something that looks less like a Powerpoint Presentation
+
+
+:0)

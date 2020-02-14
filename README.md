@@ -7,41 +7,36 @@ https://kuricarino.github.io/close-call/
 
 
 # Wireframe
-See image of written wireframe: https://imgur.com/a/CU2p57B
+See image of written wireframe: <img src="https://imgur.com/a/CU2p57B" width="400" length="300">
 
 
 # User Story
-i. 
-    The game opens with the famous scene from Mission Impossible
+i. The game opens with the famous scene from Mission Impossible
+    a. https://youtu.be/ar0xLps7WSY
+    b. See screenshot: <img src="assets/start.png" width="400" length="300">
 
-        a. https://youtu.be/ar0xLps7WSY
-        b. See screenshot: assets/start.png
+ii.  User clicks on "Your mission, should you choose to accept it" button to display game instructions.
 
-ii. 
-    User clicks on "Your mission, should you choose to accept it" button to display game instructions.
+"Answer the questions to download more files. Get 3 WRONG, the download stops and the mission has failed. Get 4 OR MORE correct and use letters from the answers to break the password. Get all the files and complete your mission. Good luck.
+    a. User clicks on the F1 button to enter the game and display the first question
+    b. See screenshot: <img src="assets/game-play.png" width="400" length="300">
 
-    "Answer the questions to download more files. Get 3 WRONG, the download stops and the mission has failed. Get 4 OR MORE correct and use letters from the answers to break the password. Get all the files and complete your mission. Good luck."
+iii.  User clicks on F buttons to navigate through questions and answers. There are five questions total.
 
-        a. User clicks on the F1 button to enter the game and display the first question
-        b. See screenshot: assets/game-play.png
+iv. Each correct answer allows the user to “download” more information from the computer.
+    a. At least four of the five questions must be answered correctly in order for the user to move onto the password page though the 'Files Ready To Download' button.
+        i. See screenshot: <img src="assets/files-ready.png" width="400" length="300">
+    b. Three wrong answers, the download stops and the mission has failed.
+        i. See screenshot: <img src="assets/three-failed-attemps.png" width="400" length="300">
+        
+v. The words from the answers will be used to answer the password. The user is given a question and hint. The user must use the letters to form a word that they will enter as the “password”.
+        a. See screenshot: <img src="assets/password-state.png" width="400" length="300">
 
-iii. 
-    User clicks on F buttons to navigate through questions and answers. There are five questions total.
-
-iv. 
-    Each correct answer allows the user to “download” more information from the computer.
-        a. At least four of the five questions must be answered correctly in order for the user to move onto the password page though the 'Files Ready To Download' button.
-            i. See screenshot: assets/files-ready.png
-        b. Three wrong answers, the download stops and the mission has failed.
-            i. See screenshot: assets/three-failed-attemps.png
-v. 
-    The words from the answers will be used to answer the password. The user is given a question and hint. The user must use the letters to form a word that they will enter as the “password”.
-        a. See screenshot: assets/password-state.png
 vi. Win/Loss states
-        a. Password correct → Mission complete! 
-            i. See screenshot: assets/mission-accomplished-state.png
-        b. Password incorrect → Mission failed.
-            i. See screenshot: assets/mission-failed.png
+    a. Password correct → Mission complete! 
+        i. See screenshot: <img src="assets/mission-accomplished-state.png" width="400" length="300">
+    b. Password incorrect → Mission failed.
+        i. See screenshot: <img src="assets/mission-failed.png" width="400" length="300">
 
 
 # Nice to haves
@@ -72,8 +67,8 @@ v. Account for mobile version
 vi. Build out trivia questions to a larger database
 
 vii. Noticed that html file color is more dynamic than 'deployed' version
-    See screenshots: assets/deployed-color.png
-                     assets/html-color.png
+    See screenshots: <img src="assets/deployed-color.png" width="400" length="300">
+                     <img src="assets/html-color.png" width="400" length="300">
 
 viii. Include scene that helps with password hint? ("Mission: Impossible (1996) - Out of the Vault Scene")
     a. https://youtu.be/2wwC9c3iYK4?t=43
@@ -88,4 +83,4 @@ viii. Include scene that helps with password hint? ("Mission: Impossible (1996) 
     i. Would love to do a more streamlined game, something that looks less like a Powerpoint Presentation
 
 
-:0)
+

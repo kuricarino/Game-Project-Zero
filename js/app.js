@@ -53,7 +53,7 @@ const triviaQA = [
             "The Hurt Locker",
         ],
         attemptedAnswer: false,
-        correctAnswer: `The King's Speech`,
+        correctAnswer: `Kill Bill`,
     },
 
     {
@@ -90,7 +90,7 @@ const password = {
         What did they leave?`
     ],
 
-    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, kILL BiLL, PROTOCOL`],
+    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, kILL BiLL, PROTOCOL. Use the letters: f-e-n-i-k`],
 
     passwordAnswer: "knife"
 

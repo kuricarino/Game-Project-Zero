@@ -178,7 +178,7 @@ function clickAnswer (event) {
         console.log(userScore += 1);
         event.target.style.background = "#f9f90b80";
     } else {
-        event.target.style.background = "#f9f90b80";
+        event.target.style.background = "#ea5757";
         console.log(maxWrong += 1);
             if (maxWrong === 3) {
         console.log(`user exceeded max wrong`);

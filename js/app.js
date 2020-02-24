@@ -53,7 +53,7 @@ const triviaQA = [
             "The Hurt Locker",
         ],
         attemptedAnswer: false,
-        correctAnswer: `The King's Speech`,
+        correctAnswer: `Kill Bill`,
     },
 
     {
@@ -90,12 +90,11 @@ const password = {
         What did they leave?`
     ],
 
-    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, kILL BiLL, PROTOCOL`],
+    passwordClues: [`hint: eTHAN HUNT, TURAnDOT, fALSE, kILL BiLL, PROTOCOL. Use the letters: f-e-n-i-k`],
 
     passwordAnswer: "knife"
 
 };
-
 // addEventListener to start button and removes video
 document.getElementById("start-button").addEventListener("click", video);
 
@@ -178,7 +177,7 @@ function clickAnswer (event) {
         console.log(userScore += 1);
         event.target.style.background = "#f9f90b80";
     } else {
-        event.target.style.background = "#f9f90b80";
+        event.target.style.background = "#ea5757";
         console.log(maxWrong += 1);
             if (maxWrong === 3) {
         console.log(`user exceeded max wrong`);
@@ -382,5 +381,3 @@ function removePasswordInput() {
     let removeInputButton = document.getElementById('pass-input-button');
         removeInputButton.remove();
 }
-
-

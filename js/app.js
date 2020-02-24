@@ -95,7 +95,6 @@ const password = {
     passwordAnswer: "knife"
 
 };
-
 // addEventListener to start button and removes video
 document.getElementById("start-button").addEventListener("click", video);
 
